@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: my-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hero
+  template:
+    metadata:
+      labels:
+        app: hero
+    spec:
+      containers:
+        - name: abhibnayapod
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+

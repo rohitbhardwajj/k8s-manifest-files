@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-daemon
+  namespace: my-namespace
+spec:
+  selector:
+    matchLabels:
+      app: hero
+  template:
+    metadata:
+      labels:
+        app: hero
+    spec:
+      containers:
+        - name: abhibnayapod
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
